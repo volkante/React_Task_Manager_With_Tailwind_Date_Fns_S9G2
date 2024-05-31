@@ -1,24 +1,24 @@
-.task {
+/* .task {
   padding: 1.5rem;
   background-color: #fff;
   border-radius: 6px;
   line-height: 1.5;
   margin-top: 1rem;
   box-shadow: 0 4px 5px 0 rgb(0 0 0 / 10%);
-}
+} */
 
-.task h3 {
+/* .task h3 {
   font-size: 18px;
   color: #c8781a;
-}
+} */
 
-.task p {
+/* .task p {
   padding: 0.5rem 0 0.75rem;
   font-size: 14px;
   color: #444;
-}
+} */
 
-.task button {
+/* .task button {
   display: block;
   padding: 8px 12px;
   margin-left: auto;
@@ -27,9 +27,9 @@
   border-radius: 2px;
   border: 0;
   cursor: pointer;
-}
+} */
 
-.pill {
+/* .pill {
   display: inline-block;
   padding: 6px 12px;
   font-size: 14px;
@@ -37,18 +37,18 @@
   margin-right: 4px;
   margin-bottom: 6px;
   border-radius: 30px;
-}
+} */
 
-.deadline {
+/* .deadline {
   font-size: 12px;
   padding-top: 4px;
-}
+} */
 
-.deadline span {
+/* .deadline span {
   padding: 4px 8px;
   border-radius: 2px;
   display: inline-block;
-}
+} */
 
 .normal {
   background-color: #ffd9d4;
@@ -56,4 +56,5 @@
 .urgent {
   background-color: #d4d7ff;
 }
+
 /* TASK */

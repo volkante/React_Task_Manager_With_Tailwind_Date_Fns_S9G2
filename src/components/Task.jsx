@@ -1,36 +1,26 @@
 import React from "react";
 // import "./task.css";
-import { differenceInDays, formatDistance } from "date-fns";
+import { differenceInDays, formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale/tr";
 
-let formattedDayDiff;
-let dayMessage;
-
 const Task = ({ taskObj, onComplete }) => {
-  const dayDifference = differenceInDays(taskObj.deadline, new Date());
-  formattedDayDiff = formatDistance(new Date(taskObj.deadline), new Date(), {
+  const formatDistanceResult = formatDistanceToNow(taskObj.deadline, {
+    addSuffix: true,
     locale: tr,
   });
 
-  if (dayDifference > 0) {
-    dayMessage = `${formattedDayDiff} sonra`;
-  } else if (dayDifference === 0) {
-    dayMessage = `Bugün!`;
-  } else {
-    dayMessage = `${formattedDayDiff} önce`;
-  }
+  const bgClass =
+    differenceInDays(taskObj.deadline, new Date()) < 3
+      ? "bg-urgent"
+      : "bg-normal";
 
   return (
     <div className="p-6 bg-white rounded-md leading-normal mt-4 shadow-[0_4px_5px_0_rgb(0 0 0 / 10%)]">
       <h3 className="text-lg text-[#c8781a]">{taskObj.title}</h3>
       <div className="text-xs pt-1">
         son teslim:
-        <span
-          className={`py-1 px-2 rounded-sm inline-block ${
-            dayDifference < 3 ? "bg-urgent" : "bg-normal"
-          }`}
-        >
-          {dayMessage}
+        <span className={`py-1 px-2 rounded-sm inline-block ${bgClass}`}>
+          {formatDistanceResult}
         </span>
       </div>
       <p className="pt-2 pb-3 text-sm text-[#444]">{taskObj.description}</p>
